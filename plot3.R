@@ -4,28 +4,27 @@
 
 source("preplot.R")
 
+# save plot as png 
+png(filename="plot3.png", width=480, height=480) 
+
 # create plot
-plot(sub_data$datetime, sub_data$Sub_metering_1,# setup plot 
+plot(sub_data$datetime, sub_data$Sub_metering_1,# setup plot with first dataset
      type="l",                                  # line plot
      xlab="",                                   # omit x axis label
      ylab="Energy sub metering",                # set y axis label
-     cex.lab=0.75,                              # adjust label size
-     cex.axis=0.75,                             # adjust axis font size
 )
 
+# plot second dataset
 points(sub_data$datetime, sub_data$Sub_metering_2, col="#F8001F", type="l")
 
+# plot third dataset
 points(sub_data$datetime, sub_data$Sub_metering_3, col="#0432FF", type="l")
 
+# create legend for plot
 legend("topright",
        legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"),
        lty=1,
-       cex=0.75,
-       col=c("black", "#F8001F", "#0432FF"), 
-       text.width=strwidth(legend),
-       xjust=0
+       col=c("black", "#F8001F", "#0432FF")
        )
-
-dev.copy(png, file="plot3.png")                 # save png image               
 
 dev.off()                                       # close png device

@@ -4,15 +4,14 @@
 
 source("preplot.R")
 
+# save plot as png 
+png(filename="plot2.png", width=480, height=480) 
+
 # create plot
 plot(sub_data$datetime, sub_data$Global_active_power, 
      type="l",                                  # line plot
      xlab="",                                   # omit x axis label
      ylab="Global Active Power (kilowatts)",    # set y axis label
-     cex.lab=0.75,                              # adjust label size
-     cex.axis=0.75                              # adjust axis font size
      )
-
-dev.copy(png, file="plot2.png")                 # save png image               
 
 dev.off()                                       # close png device
