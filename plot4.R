@@ -16,7 +16,7 @@ par(mfcol=c(2,2))
 plot(sub_data$datetime, sub_data$Global_active_power, 
      type="l",                                  # line plot
      xlab="",                                   # omit x axis label
-     ylab="Global Active Power (kilowatts)",    # set y axis label
+     ylab="Global Active Power"                 # set y axis label
 )
 
 # create plot 2/4

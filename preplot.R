@@ -24,7 +24,7 @@ data <- cbind.data.frame(paste(data$Date, data$Time), data, stringsAsFactors=F)
 colnames(data)[1] <- "datetime"
 data <- data[, !names(data) %in% c("Date", "Time")]
 
-# convert datatime column from character to date objects
+# convert datetime column from character to date objects
 data$datetime <- strptime(data$datetime, format="%d/%m/%Y %H:%M:%S")
 
 # subset desired date range of 2007/02/01 to 2007/02/02
